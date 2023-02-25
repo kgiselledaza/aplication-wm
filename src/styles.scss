@@ -1,0 +1,40 @@
+.w-100,
+.p-dropdown {
+  width: 100%;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog-form {
+  width: 50%;
+}
+
+.text-active,
+.text-inactive {
+  border-radius: 2px;
+  padding: 0.25em 0.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-align: center !important;
+}
+
+.text-inactive {
+  background-color: #ffcdd2;
+  color: #c63737;
+}
+
+.text-active {
+  background-color: #c8e6c9;
+  color: #256029;
+}
+
+:host ::ng-deep {
+  .p-dialog .p-dialog-header {
+    background-color: #f8fafc;
+  }
+}

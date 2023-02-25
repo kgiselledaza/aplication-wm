@@ -1,0 +1,209 @@
+<form #userForm="ngForm" novalidate>
+  <div class="grid mt-3">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="CodUsuario"
+            name="CodUsuario"
+            ngModel
+            #CodUsuario="ngModel"
+            class="w-100"
+            pInputText
+          />
+          <label for="CodUsuario">Código</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Nombre"
+            name="Nombre"
+            class="w-100"
+            required
+            ngModel
+            #Nombre="ngModel"
+            pInputText
+          />
+          <label for="Nombre">Nombre</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Usuario"
+            name="Usuario"
+            ngModel
+            #Usuario="ngModel"
+            class="w-100"
+            required
+            pInputText
+          />
+          <label for="Usuario">Usuario</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <p-dropdown
+            id="Genero"
+            name="Genero"
+            ngModel
+            #Genero="ngModel"
+            optionLabel="name"
+          ></p-dropdown>
+          <label for="Genero">Genero</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Email"
+            name="Email"
+            ngModel
+            #Email="ngModel"
+            class="w-100"
+            required
+            pInputText
+          />
+          <label for="Email">Correo</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Identificacion"
+            name="Identificacion"
+            ngModel
+            #Identificacion="ngModel"
+            required
+            class="w-100"
+            pInputText
+          />
+          <label for="Identificacion">Identificación</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <p-dropdown
+            id="TipoCompania"
+            name="TipoCompania"
+            ngModel
+            #TipoCompania="ngModel"
+            optionLabel="name"
+          ></p-dropdown>
+          <label for="TipoCompania">Tipo compañia</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <p-dropdown
+            id="CodCompania"
+            name="CodCompania"
+            ngModel
+            #CodCompania="ngModel"
+            optionLabel="name"
+          ></p-dropdown>
+          <label for="CodCompania">Compañia</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="password"
+            id="Contrasena"
+            name="Contrasena"
+            ngModel
+            #Contrasena="ngModel"
+            class="w-100"
+            required
+            pPassword
+          />
+          <label for="Contrasena">Contraseña</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            id="confirmPasswordUser"
+            name="confirmPasswordUser"
+            ngModel
+            #confirmPasswordUser="ngModel"
+            class="w-100"
+            type="password"
+            pPassword
+          />
+          <label for="confirmPasswordUser">Confirmar constraseña</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <div>Aplica control de proximidad</div>
+        <p-inputSwitch
+          id="AplicaProximidadControl"
+          name="AplicaProximidadControl"
+          ngModel
+          #AplicaProximidadControl="ngModel"
+        ></p-inputSwitch>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <div>Estado</div>
+        <p-inputSwitch
+          id="CtrlActivo"
+          name="CtrlActivo"
+          ngModel
+          #CtrlActivo="ngModel"
+        ></p-inputSwitch>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 container-btn">
+    <button
+      type="submit"
+      pButton
+      pRipple
+      label="Crear"
+      (click)="onCreate(userForm)"
+      [disabled]="userForm.invalid"
+      class="p-button-rounded p-button-success btn"
+    ></button>
+  </div>
+</form>

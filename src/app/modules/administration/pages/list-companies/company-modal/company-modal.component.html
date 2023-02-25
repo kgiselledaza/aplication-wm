@@ -1,0 +1,202 @@
+<form #companyForm="ngForm" novalidate>
+  <div class="grid mt-3">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="CodEmpresa"
+            name="CodEmpresa"
+            ngModel
+            #CodEmpresa="ngModel"
+            class="w-100"
+            pInputText
+          />
+          <label for="CodEmpresa">Código</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <p-dropdown
+            id="IdEmpresaPadre"
+            name="IdEmpresaPadre"
+            ngModel
+            #IdEmpresaPadre="ngModel"
+            optionLabel="name"
+          ></p-dropdown>
+          <label for="IdEmpresaPadre">Empresa padre</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="NumeroIdentificacion"
+            name="NumeroIdentificacion"
+            ngModel
+            #NumeroIdentificacion="ngModel"
+            class="w-100"
+            required
+            pInputText
+          />
+          <label for="NumeroIdentificacion">Identificación</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="RazonSocial"
+            name="RazonSocial"
+            ngModel
+            #RazonSocial="ngModel"
+            class="w-100"
+            required
+            pInputText
+          />
+          <label for="RazonSocial">Razón social</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="NombreComercial"
+            name="NombreComercial"
+            ngModel
+            #NombreComercial="ngModel"
+            class="w-100"
+            required
+            pInputText
+          />
+          <label for="NombreComercial">Nombre comercial</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Contacto"
+            name="Contacto"
+            ngModel
+            #Contacto="ngModel"
+            required
+            class="w-100"
+            pInputText
+          />
+          <label for="Contacto">Contacto</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Direccion"
+            name="Direccion"
+            ngModel
+            #Direccion="ngModel"
+            required
+            class="w-100"
+            pInputText
+          />
+          <label for="Direccion">Dirección</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Email"
+            name="Email"
+            ngModel
+            #Email="ngModel"
+            class="w-100"
+            pInputText
+          />
+          <label for="Email">Correo</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="Telefono"
+            name="Telefono"
+            ngModel
+            #Telefono="ngModel"
+            class="w-100"
+            pInputText
+          />
+          <label for="Telefono">Telefono</label>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            id="SitioWeb"
+            name="SitioWeb"
+            ngModel
+            #SitioWeb="ngModel"
+            class="w-100"
+            type="text"
+            pInputText
+          />
+          <label for="SitioWeb">Sitio web</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <div>Estado</div>
+        <p-inputSwitch
+          id="CtrlActivo"
+          name="CtrlActivo"
+          ngModel
+          #CtrlActivo="ngModel"
+        ></p-inputSwitch>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 container-btn">
+    <button
+      type="submit"
+      pButton
+      pRipple
+      label="Crear"
+      (click)="onCreate(companyForm)"
+      [disabled]="companyForm.invalid"
+      class="p-button-rounded p-button-success btn"
+    ></button>
+  </div>
+</form>

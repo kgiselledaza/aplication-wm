@@ -1,0 +1,51 @@
+{
+    "Generic": {
+        "Buttons": {
+            "Create": "Crear",
+            "View": "Ver",
+            "Update": "Actualizar",
+            "Delete": "Eliminar",
+            "Save": "Guardar",
+            "Cancel": "Cancelar"
+        },
+        "Messages": {
+            "NoResults": "No se encontraron registros para mostrar."
+        },
+        "Placeholder": {
+            "Buscar": "Buscar"
+        },
+        "Labels": {
+            "Login": "Iniciar sesión"
+        },
+        "Validations":{
+            "Required": "Campo requerido."
+        }
+    },
+    "Administration": {
+        "Dispositivo": {
+            "Title": "Dispositivos",
+            "TitleSingle": "Dispositivo",
+            "Labels": {
+                "IdDispositivo": "IdDispositivo",
+                "CodDispositivo": "CodDispositivo",
+                "Identificador": "Identificador",
+                "Licencia": "Licencia",
+                "Modelo": "Modelo",
+                "Observacion": "Observación",
+                "CtrlActivo": "CtrlActivo",
+                "CtrlUsuarioCreador": "CtrlUsuarioCreador",
+                "CtrlUsuarioModificacion": "CtrlUsuarioModificacion",
+                "CtrlFechaCreacion": "CtrlFechaCreacion",
+                "CtrlFechaModificacion": "CtrlFechaModificacion"
+            },
+            "Placeholder": {
+                "IdDispositivo": "Ingrese el IdDispositivo",
+                "CodDispositivo": "Ingrese el CodDispositivo",
+                "Identificador": "Ingrese el Identificador",
+                "Licencia": "Ingrese la Licencia",
+                "Modelo": "Ingrese el Modelo",
+                "Observacion": "Ingrese la Observación"
+            }
+        }
+    }
+}
