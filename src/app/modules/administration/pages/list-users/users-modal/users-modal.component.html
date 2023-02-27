@@ -58,9 +58,11 @@
           <p-dropdown
             id="Genero"
             name="Genero"
+            [options]="optionsList.gender"
+            optionLabel="label"
+            optionValue="value"
             ngModel
             #Genero="ngModel"
-            optionLabel="name"
           ></p-dropdown>
           <label for="Genero">Genero</label>
         </span>
@@ -111,9 +113,12 @@
           <p-dropdown
             id="TipoCompania"
             name="TipoCompania"
+            [options]="optionsList.typeCompany"
+            optionLabel="label"
+            optionValue="value"
             ngModel
             #TipoCompania="ngModel"
-            optionLabel="name"
+            (onChange)="getCompany(optionsList.typeCompany[0].label)"
           ></p-dropdown>
           <label for="TipoCompania">Tipo compañia</label>
         </span>

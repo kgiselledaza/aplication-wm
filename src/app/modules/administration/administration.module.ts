@@ -21,6 +21,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {PasswordModule} from 'primeng/password';
 import { CompanyModalComponent } from './pages/list-companies/company-modal/company-modal.component';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CompanyModalComponent } from './pages/list-companies/company-modal/comp
     DropdownModule,
     InputSwitchModule,
     ConfirmDialogModule,
-    PasswordModule
+    PasswordModule,
+    ToastModule
   ],
   providers: [
     ConfirmationService,

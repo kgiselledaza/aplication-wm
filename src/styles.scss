@@ -33,8 +33,22 @@
   color: #256029;
 }
 
-:host ::ng-deep {
-  .p-dialog .p-dialog-header {
-    background-color: #f8fafc;
-  }
+.p-dialog .p-dialog-header {
+  background-color: #f8fafc;
+}
+
+.p-splitbutton > .p-splitbutton-defaultbutton {
+  display: none;
+}
+
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: #689F38 !important;
+}
+
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before{
+  background-color: #fff !important;
+}
+
+.p-splitbutton-menubutton{
+  border-radius: 50% !important;
 }

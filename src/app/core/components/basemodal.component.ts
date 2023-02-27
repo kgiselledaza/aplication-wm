@@ -1,6 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { BaseExtendedService } from '@core/services/base-extended.service';
 import { Utility } from '@core/Utilities/utility';
+import { MessageService } from 'primeng/api';
 
 export class BaseModalComponent<T> {
   isUpdate = false;
@@ -19,7 +20,7 @@ export class BaseModalComponent<T> {
 
   onCreate(form: NgForm): void {
     console.log(form);
-    
+
     if (form.invalid) {
       Object.values(form.controls).forEach((control) => {
         control.markAsTouched();
@@ -28,7 +29,6 @@ export class BaseModalComponent<T> {
     }
     this.baseService.crear(form.value).subscribe((res) => {
       console.log(res);
-      
     });
   }
 

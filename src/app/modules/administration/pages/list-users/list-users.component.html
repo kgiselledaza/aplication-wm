@@ -26,14 +26,25 @@
     <ng-template pTemplate="caption">
       <div class="flex">
         Lista de usuarios
-        <span class="p-input-icon-left ml-auto">
-          <i class="pi pi-search"></i>
-          <input pInputText type="text" placeholder="Buscar" />
-        </span>
+        <div class="ml-auto">
+          <button
+            label="Crear usuario"
+            pButton
+            type="button"
+            icon="pi pi-plus"
+            (click)="openModal('user')"
+            class="p-button-success p-button-rounded mr-4"
+          ></button>
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" placeholder="Buscar" />
+          </span>
+        </div>
       </div>
     </ng-template>
     <ng-template pTemplate="header">
       <tr>
+        <th scope="col"></th>
         <th scope="col" pSortableColumn="Id">
           Id
           <p-sortIcon field="Id"></p-sortIcon>
@@ -79,6 +90,15 @@
     </ng-template>
     <ng-template pTemplate="body" let-listEntity>
       <tr>
+        <td>
+          <p-splitButton
+            label="Save"
+            icon="pi pi-plus"
+            [model]="getItems"
+            styleClass="p-button-success mb-2"
+            (onDropdownClick)="handleActionsClick(listEntity)"
+          ></p-splitButton>
+        </td>
         <td>{{ listEntity.IdUsuario }}</td>
         <td>{{ listEntity.CodUsuario }}</td>
         <td>{{ listEntity.Nombre }}</td>
@@ -95,13 +115,6 @@
             "
             >{{ listEntity.CtrlActivo ? "Activo" : "Inactivo" }}</span
           >
-        </td>
-        <td>
-          <p-splitButton
-            label="Save"
-            icon="pi pi-plus"
-            [model]="items"
-          ></p-splitButton>
         </td>
       </tr>
     </ng-template>
@@ -122,3 +135,4 @@
   [(visible)]="displayFormPassword"
   ><app-change-password-modal></app-change-password-modal
 ></p-dialog>
+<p-toast></p-toast>

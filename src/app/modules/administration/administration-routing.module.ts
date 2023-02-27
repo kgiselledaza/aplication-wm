@@ -14,7 +14,7 @@ const routes: Routes = [
       {
         path: 'list-users',
         component: ListUsersComponent,
-       
+
       },
       {
         path: 'list-companies',
@@ -25,7 +25,7 @@ const routes: Routes = [
         component: UsersModalComponent,
       },
       {
-        path: 'password-modal',
+        path: 'password-modal:id',
         component: ChangePasswordModalComponent,
       },
     ],

@@ -3,7 +3,7 @@ import { BaseListComponent } from '@core/components/baselist.component';
 import { Company } from '@modules/administration/models/companie.model';
 import { CompaniesService } from '@modules/administration/services/companies.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ConfirmationService, MenuItem } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-list-companies',
@@ -15,38 +15,43 @@ export class ListCompaniesComponent
   implements OnInit
 {
   items: MenuItem[] = [];
+  selectedUserForAction: any = null;
 
   constructor(
     readonly companiesService: CompaniesService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) {
     super(companiesService);
   }
 
   ngOnInit(): void {
     this.$getListEntity();
-    this.initItems()
   }
 
-  initItems() {
-    this.items = [
-      {
-        label: 'Editar usuario',
-        icon: 'pi pi-pencil',
-        command: () => {
-          this.openModal('company');
-        },
-      },
+  public handleActionsClick(user: any) {
+    this.selectedUserForAction = user;
+    console.log(this.selectedUserForAction);
 
-      {
-        label: 'Eliminar',
-        icon: 'pi pi-trash',
-        command: () => {
-          this.deleteCompany();
-        },
-      },
-    ];
   }
+
+  getItems: MenuItem[] = [
+    {
+      label: 'Editar usuario',
+      icon: 'pi pi-pencil',
+      command: () => {
+        this.openModal('company');
+      },
+    },
+
+    {
+      label: 'Eliminar',
+      icon: 'pi pi-trash',
+      command: () => {
+        this.deleteCompany();
+      },
+    },
+  ];
 
   deleteCompany() {
     console.log('Entra');
@@ -56,7 +61,8 @@ export class ListCompaniesComponent
       acceptLabel: 'Aceptar',
       rejectLabel: 'Cancelar',
       accept: () => {
-        //this.onDelete();
+        this.onDelete(this.selectedUserForAction.IdEmpresa);
+        this.messageService.add({severity:'success', summary: 'Eliminación satisfactoria', detail: 'El registro se eliminó satisfactoriamente'});
       },
     });
   }
